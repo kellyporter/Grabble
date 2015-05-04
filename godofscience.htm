@@ -1,0 +1,198 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+ 
+<script type="text/JavaScript">
+<!--
+setTimeout("location.href = 'condors.htm';",25000);
+-->
+</script>
+
+  <style type="text/css">
+
+@-webkit-keyframes fadeOut { from { opacity:1; } to { opacity:0; } }
+@-moz-keyframes fadeOut{ from { opacity:1; } to { opacity:0; } }
+@keyframes fadeOut { from { opacity:1; } to { opacity:0; } }
+ 
+.fade-out {
+    opacity:1;  
+    -webkit-animation:fadeOut ease-in 1;
+    -moz-animation:fadeOut ease-in 1;
+    animation:fadeOut ease-in 1;
+ 
+    -webkit-animation-fill-mode:forwards;
+    -moz-animation-fill-mode:forwards;
+    animation-fill-mode:forwards;
+ 
+    -webkit-animation-duration: 3s;
+    -moz-animation-duration: 3s;
+    animation-duration: 3s;
+}
+
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn{ from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+ 
+.fade-in {
+    opacity:0;  
+    -webkit-animation:fadeIn ease-in 1;
+    -moz-animation:fadeIn ease-in 1;
+    animation:fadeIn ease-in 1;
+ 
+    -webkit-animation-fill-mode:forwards;
+    -moz-animation-fill-mode:forwards;
+    animation-fill-mode:forwards;
+ 
+    -webkit-animation-duration: 3s;
+    -moz-animation-duration: 3s;
+    animation-duration: 3s;
+
+-webkit-animation-delay: 20s;
+-moz-animation-delay: 20s;
+animation-delay: 20s;
+}
+
+.fade-out, .fade-in {
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #000;
+z-index: 1000;
+}
+
+.flContainer {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 997;
+    position: fixed;
+    top: expression(
+        document.getElementsByTagName( 'body' )[0].scrollTop + "px"
+    );
+    pointer-events: none;
+}
+.fl {   
+    width: 5000px;
+    height: 5000px;
+    position: absolute;
+    overflow: hidden;
+    z-index: 998;
+    visibility = "visible";
+}
+.flspot {
+    background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, color-stop(25%, rgba(0, 0, 0, 0)), color-stop(100%, #000000)); 
+    background-image: -webkit-radial-gradient(center center, 10px circle, rgba(0, 0, 0, 0) 25%, #000000 100%);
+    background: radial-gradient(150px circle at center center, rgba(0,0,0,0) 0%,rgba(0,0,0,0.01) 25%,rgba(0,0,0,1) 100%);
+    background-image: -moz-radial-gradient(center center, closest-side circle, rgba(0, 0, 0, 0) 25%, #000000 100%);
+    background-image: -ms-radial-gradient(center center, closest-side circle, rgba(0, 0, 0, 0) 25%, #000000 100%);
+    background-image: -o-radial-gradient(center center, closest-side circle, rgba(0, 0, 0, 0) 25%, #000000 100%);
+    width: 900px;
+    height: 900px;
+    position: absolute;
+    overflow: hidden;
+    z-index: 998;
+    visibility = "visible";    
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #9D6A8E;
+  overflow: hidden;
+  cursor: none;
+  }
+
+.image {
+	margin: 0;
+	text-align: right;
+	width: 100%;
+	overflow: hidden;
+	}
+
+.text	{
+	z-index: 999;
+	}
+	
+	  </style>
+
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type='text/javascript'>
+    $(document).ready(function() {
+        $(".flContainer").css({
+            display: 'block'
+        });
+        $("#fl").css({
+            top: ($(window).height()/2 - 2500) + "px",
+            left: ($(window).width()/2 - 2500) + "px"
+        });
+        $(document).mousemove(function(e){
+            $("#fl").css({
+                top: (e.pageY - $(window).scrollTop() - 2500) + "px",
+                left: (e.pageX - 2500) + "px"
+            });
+        });
+
+        // fallback for IE
+        $("#fl").click(function (event) {
+            $(this).toggle();
+            var link = document.elementFromPoint(event.clientX, event.clientY);	// IE & FF
+            $(this).toggle();
+            if (link.tagName.toLowerCase() == 'a') {
+                window.location.href = link.href;
+            }
+            $(link).trigger('click');
+        });
+        if ( getCookie("flashlight") != "on" ) ToggleLights();
+    });
+
+    function getCookie(name) {
+      var parts = document.cookie.split(name + "=");
+      if (parts.length == 2) return parts.pop().split(";").shift();
+    }
+    
+    function ToggleLights() {
+        var fldiv = document.getElementById('fl');
+        if (fldiv.style.display !== 'none') {
+            //Turn flashlight off
+            document.cookie = 'flashlight=off; path=/'
+            fldiv.style.display = 'none';
+        }
+        else {
+            //Turn flashlight on
+            document.cookie = 'flashlight=on; path=/'
+            fldiv.style.display = 'block';
+        }
+    }
+</script>
+
+<script>
+window.onload=ToggleLights ;
+</script>
+
+ </head>
+ 
+ 
+ <body>
+
+<div class="flContainer">
+    <div class="fl" id="fl">
+        <div style="position:absolute; background: black; top:0px; left:0px; width:5000px; height:2050px; overflow:hidden;"></div>
+        <div style="position:absolute; background: black; top:2050px; left:0px; width:2050px; height:900px; overflow:hidden;"></div>
+        <div class="flspot" style="position:absolute; top:2050px; left:2050px; width:900px; height:900px; overflow:hidden;"></div>
+        <div style="position:absolute; background: black; top:2050px; left:2950px; width:2050px; height:900px; overflow:hidden;"></div>
+        <div style="position:absolute; background: black; top:2950px; left:0px; width:5000px; height:2050px; overflow:hidden;"></div>
+    </div>
+</div>
+
+
+<div class="fade-in"></div><div class="fade-out"></div>
+<div class="text"></div><div class="image"><img style="height: 700px;" src="http://i.imgur.com/Z1lKZum.png"></div>
+
+  
+ </body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+
+<link href='http://fonts.googleapis.com/css?family=Gilda+Display' rel='stylesheet' type='text/css'>
+
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+
+<style type="text/css">
+
+body {
+	background-color: #000;
+	}
+
+#container	{
+	margin: 150px auto;
+    width: 600px;
+    text-align: center;
+    }
+
+#glass	{
+	float: left;
+    opacity: 0;
+    padding: 0 30px;
+    }
+
+#kelly	{
+	float: left;
+	margin-top: 30px;
+	opacity: 0;
+    }
+    
+#kylie	{
+	float: left;
+	margin-top: 200px;
+	opacity: 0;
+    }
+
+#kelly img:hover, #kylie img:hover {
+	opacity: .3;
+	}
+
+a, a:active {
+    color: #CCC;
+    text-decoration:none;
+    }
+
+@-webkit-keyframes fadeOut { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeOut{ from { opacity:0; } to { opacity:1; } }
+@keyframes fadeOut { from { opacity:0; } to { opacity:1; } }
+ 
+.fade-out {
+    opacity:0;  
+    -webkit-animation:fadeOut ease-in 1;
+    -moz-animation:fadeOut ease-in 1;
+    animation:fadeOut ease-in 1;
+ 
+    -webkit-animation-fill-mode:forwards;
+    -moz-animation-fill-mode:forwards;
+    animation-fill-mode:forwards;
+ 
+    -webkit-animation-duration: 5s;
+    -moz-animation-duration: 5s;
+    animation-duration: 5s;
+    
+    -webkit-animation-delay: 1s;
+	-moz-animation-delay: 1s;
+	animation-delay: 1s;
+	}
+
+.fade-out.two {
+    opacity:0;  
+    -webkit-animation:fadeOut ease-in 1;
+    -moz-animation:fadeOut ease-in 1;
+    animation:fadeOut ease-in 1;
+ 
+    -webkit-animation-fill-mode:forwards;
+    -moz-animation-fill-mode:forwards;
+    animation-fill-mode:forwards;
+ 
+    -webkit-animation-duration: 3s;
+    -moz-animation-duration: 3s;
+    animation-duration: 3s;
+    
+    -webkit-animation-delay: 5s;
+	-moz-animation-delay: 5s;
+	animation-delay: 5s;
+	}
+
+.fade-out.three {
+    opacity:0;  
+    -webkit-animation:fadeOut ease-in 1;
+    -moz-animation:fadeOut ease-in 1;
+    animation:fadeOut ease-in 1;
+ 
+    -webkit-animation-fill-mode:forwards;
+    -moz-animation-fill-mode:forwards;
+    animation-fill-mode:forwards;
+ 
+    -webkit-animation-duration: 3s;
+    -moz-animation-duration: 3s;
+    animation-duration: 3s;
+    
+    -webkit-animation-delay: 8s;
+	-moz-animation-delay: 8s;
+	animation-delay: 8s;
+	}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="container">
+	<div id="kelly" class="fade-out two"><a href="kyliechoice.htm"><img src="kelly.png" style="max-height: 170px;"></a></div>
+	<div id="glass" class="fade-out"><img src="glass.png" style="max-height: 400px;"></div>
+	<div id="kylie" class="fade-out three"><a href="kyliechoice.htm"><img src="kylie.png" style="max-height: 170px;"></a></div>
+</div>
+
+</body>
+
+</html>

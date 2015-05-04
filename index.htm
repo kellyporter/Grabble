@@ -1,0 +1,155 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+
+<link href='http://fonts.googleapis.com/css?family=Gilda+Display' rel='stylesheet' type='text/css'>
+
+<script type="text/JavaScript">
+<!--
+setTimeout("location.href = 'choice1.htm';",12000);
+-->
+</script>
+
+<style type="text/css">
+
+body {
+	background-color: #000;
+	overflow: hidden;
+	cursor: none;
+	}
+
+.fade-in.one img {
+	max-width:400px;
+	margin-top: 110px;
+	}
+
+.fade-out.two {
+	text-align: center;
+	}
+
+#content	{
+	font-family: 'Gilda Display', serif;
+	color: #c2c2c2;
+	width: 100%;
+	height: 100%;
+	}
+
+p.big {
+    font-size: 24px;
+    line-height: 30px;
+    }
+
+.medium {
+    font-size: 18px;
+	}
+
+p.small {
+    font-size: 16px;
+	font-weight: 300;
+    line-height: 20px;
+    }
+
+.fade-in.one	{
+	text-align:center;
+	}
+	
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+ 
+.fade-in {
+
+    opacity:0;  
+    -webkit-animation:fadeIn ease-in 1;
+    -moz-animation:fadeIn ease-in 1;
+    animation:fadeIn ease-in 1;
+ 
+    -webkit-animation-fill-mode:forwards;
+    -moz-animation-fill-mode:forwards;
+    animation-fill-mode:forwards;
+ 
+    -webkit-animation-duration: 4s;
+    -moz-animation-duration: 4s;
+    animation-duration: 4s;
+}
+
+@-webkit-keyframes fadeOut { from { opacity:1; } to { opacity:0; } }
+@-moz-keyframes fadeOut{ from { opacity:1; } to { opacity:0; } }
+@keyframes fadeOut { from { opacity:1; } to { opacity:0; } }
+ 
+.fade-out {
+    opacity:1;  
+    -webkit-animation:fadeOut ease-in 1;
+    -moz-animation:fadeOut ease-in 1;
+    animation:fadeOut ease-in 1;
+ 
+    -webkit-animation-fill-mode:forwards;
+    -moz-animation-fill-mode:forwards;
+    animation-fill-mode:forwards;
+ 
+    -webkit-animation-duration: 3s;
+    -moz-animation-duration: 3s;
+    animation-duration: 3s;
+}
+
+/*FADE IN*/
+
+.fade-in.one {
+-webkit-animation-delay: 0s;
+-moz-animation-delay: 0s;
+animation-delay: 0s;
+}
+
+.fade-in.three {
+-webkit-animation-delay: 10s;
+-moz-animation-delay: 10s;
+animation-delay: 10s;
+}
+
+
+/*FADE OUT*/
+
+.fade-out.one {
+-webkit-animation-delay: 7s;
+-moz-animation-delay: 7s;
+animation-delay: 7s;
+}
+
+.fade-out.two {
+-webkit-animation-delay: 9s;
+-moz-animation-delay: 9s;
+animation-delay: 9s;
+}
+
+ 
+a, a:active {
+    color: #CCC;
+    text-decoration:none;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="content">
+
+	<div class="fade-in one"><div class="fade-out one"><div class="nest">
+	<img src="Logo.jpg"><br>
+	</div></div></div>
+
+	<div class="fade-out two"><div class="nest">
+	<div id="slogan"></div>
+	</div></div>
+
+</div>
+
+<script type="text/javascript" src="index.js">
+</script>
+
+</body>
+
+</html>
